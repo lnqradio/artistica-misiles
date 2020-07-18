@@ -77,6 +77,7 @@ font-family: monospace;
 opacity: .8;
 }
 
+
 #container canvas {
 	opacity: .5;
 }
@@ -90,9 +91,6 @@ font-size: 1rem;
 	position: absolute;
 	/* top: 0; */
 	left: 0;
-	/*-webkit-transform: translate(-50%,0);
-	transform: translate(-50%,0);
-	*/
 	z-index: 30000;
 	/* position: relative; */
 	/* background: red; */
@@ -104,6 +102,7 @@ font-size: 1rem;
 	display: flex;
 	min-width: 250px;
 	justify-content: space-around;
+	width: auto;
 }
 
 .misiles h3 {
@@ -117,6 +116,9 @@ opacity: .75;
 margin: 0.25rem 0;
 	
 }
+
+
+
 
 .misiles img {
 	width: 150px;
@@ -147,6 +149,31 @@ audio {
         animation-delay: 1s;
         -webkit-animation-delay: calc(var(--animate-delay)*1);
         animation-delay: calc(var(--animate-delay)*1);
+}
+
+@media screen and (max-width: 800px) {
+	.misiles {
+		width: auto;
+		padding: 1rem 1rem 3rem 1rem;
+		bottom: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		left: .25rem;
+		right: .25rem;
+	}
+	.misiles img {
+		width: 90px;
+	}
+	button {
+		    bottom: -15px;
+	}
+	audio {
+		width: 100%;
+	}
+	#container canvas {
+	    transform: translateY(-50px);
+	}
 }
 
 body {
