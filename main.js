@@ -60,7 +60,7 @@ const initCanvasAudio = name => {
     let color = new THREE.Color();
     for (let f = 0; f < numFaces; f++) {
       let index = 9 * f;
-      let h = 0.1 * Math.random();
+      let h = 0.9 * Math.random();
       let s = 0.1 + 0.1 * Math.random();
       let l = 0.5 + 0.5 * Math.random();
       color.setHSL(h, s, l);
