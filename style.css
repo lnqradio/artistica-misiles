@@ -16,7 +16,7 @@ body {
   left: 0;
   overflow: hidden;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 .fullscreen-bg__video {
@@ -25,6 +25,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  filter: grayscale(1)
 }
 
 @media (min-aspect-ratio: 16 / 9) {
@@ -62,17 +63,23 @@ button {
 
 .misiles {
 position: fixed;
+background: rgba(0,0,0,.2);
+padding: 2rem 1rem;
 display: flex;
 align-items: center;
 flex-direction: column;
-left: 0;
+right: 0;
 color: #ddd;
 right: 0;
 width: 250px;
 text-align: center;
-top: 0;
+top: 25vh;
 font-family: monospace;
 opacity: .8;
+}
+
+#container canvas {
+	opacity: .5;
 }
 
 .misiles h2 {
@@ -81,6 +88,7 @@ font-size: 2rem;
 }
 .misiles p {
 font-size: 1.25rem;
+opacity: .5;
 margin: 0.25rem 0;
 	
 }
@@ -98,13 +106,9 @@ audio {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	opacity: .5
+	opacity: 1;
 }
 
 body {
 	cursor: move
-}
-
-canva {
-	opacity: .5
 }

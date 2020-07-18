@@ -2,9 +2,11 @@
 const initCanvasAudio = name => {
   // create the new audio
   const audio = new Audio();
-  audio.src = "https://assets.ctfassets.net/mai25em38k9q/6L1CF6qh30jQM1A1D7dJKb/427a642978bd799b83f50ed02e440edb/artistica-misiles.mp3";
+  audio.src = "https://assets.ctfassets.net/mai25em38k9q/2qHoL9NrIDZWOJylxocaDX/cf74660368fceb495674db96b500267e/MFL-Flaming-Lynch.mp3";
   audio.controls = true;
+  audio.controlsList = "nodownload";
   audio.autoplay = true;
+
   audio.crossOrigin = "anonymous";
   document.body.appendChild(audio);
 
@@ -37,7 +39,7 @@ const initCanvasAudio = name => {
     camera = new THREE.PerspectiveCamera(50, width / height, 1, 10000);
     camera.position.set(0, 0, 120);
     controls = new THREE.OrbitControls(camera);
-    controls.autoRotate = false;
+    controls.autoRotate = true;
 
     // create the scene
     scene = new THREE.Scene();
@@ -58,11 +60,11 @@ const initCanvasAudio = name => {
     let color = new THREE.Color();
     for (let f = 0; f < numFaces; f++) {
       let index = 9 * f;
-      let h = 0.2 * Math.random();
-      let s = 0.5 + 0.5 * Math.random();
+      let h = 0.1 * Math.random();
+      let s = 0.1 + 0.1 * Math.random();
       let l = 0.5 + 0.5 * Math.random();
       color.setHSL(h, s, l);
-      let d = 10 * (0.5 - Math.random());
+      let d = 5 * (0.5 - Math.random());
       for (let i = 0; i < 3; i++) {
         colors[index + 5 * i] = color.r;
         colors[index + 8 * i + 1] = color.g;
