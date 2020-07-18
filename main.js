@@ -36,7 +36,7 @@ const initCanvasAudio = name => {
 
   function init() {
     // create the camera and hook up orbit controls
-    camera = new THREE.PerspectiveCamera(50, width / height, 1, 10000);
+    camera = new THREE.PerspectiveCamera(20, width / height, 1, 10000);
     camera.position.set(0, 0, 120);
     controls = new THREE.OrbitControls(camera);
     controls.autoRotate = true;
@@ -45,7 +45,7 @@ const initCanvasAudio = name => {
     scene = new THREE.Scene();
 
     // create the geometry
-     let geometry = new THREE.TorusKnotGeometry(10, 3, 64, 8, 2, 3);
+     let geometry = new THREE.TorusKnotGeometry(16, .4, 80, 3, 11, 13);
     geometry.center();
     let tessellateModifier = new THREE.TessellateModifier(2);
     for (let i = 0; i < 6; i++) {
@@ -126,7 +126,7 @@ const initCanvasAudio = name => {
   //render the sucker
   function render(freqData) {
     // this is what makes the shader pop. This line of code feeds the audio in
-    uniforms.amplitude.value = numscale(freqData[0], -50, 100, -2, 2);
+    uniforms.amplitude.value = numscale(freqData[0], 0, 300, -2, 2);
     // we have to update the orbit controls anytime we render
     controls.update();
     renderer.render(scene, camera);
