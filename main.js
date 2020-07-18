@@ -39,7 +39,7 @@ const initCanvasAudio = name => {
     camera = new THREE.PerspectiveCamera(20, width / height, 1, 10000);
     camera.position.set(0, 0, 120);
     controls = new THREE.OrbitControls(camera);
-    controls.autoRotate = true;
+    controls.autoRotate = false;
 
     // create the scene
     scene = new THREE.Scene();
