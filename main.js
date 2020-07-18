@@ -45,9 +45,9 @@ const initCanvasAudio = name => {
     scene = new THREE.Scene();
 
     // create the geometry
-     let geometry = new THREE.TorusGeometry(5, 3, 67, 18, 15, 12);
+     let geometry = new THREE.TorusKnotGeometry(10, 3, 64, 8, 2, 3);
     geometry.center();
-    let tessellateModifier = new THREE.TessellateModifier(8);
+    let tessellateModifier = new THREE.TessellateModifier(2);
     for (let i = 0; i < 6; i++) {
       tessellateModifier.modify(geometry);
     }
