@@ -143,8 +143,8 @@ audio {
     animation-duration: var(--animate-duration);
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-        -webkit-animation-name: fadeIn;
-        animation-name: fadeIn;
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
     -webkit-animation-delay: 1s;
         animation-delay: 1s;
         -webkit-animation-delay: calc(var(--animate-delay)*1);

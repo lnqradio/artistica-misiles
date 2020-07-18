@@ -36,8 +36,8 @@ const initCanvasAudio = name => {
 
   function init() {
     // create the camera and hook up orbit controls
-    camera = new THREE.PerspectiveCamera(20, width / height, 1, 10000);
-    camera.position.set(0, 0, 120);
+    camera = new THREE.PerspectiveCamera(20, width / height, 1, 5000);
+    camera.position.set(0, 0, 30);
     controls = new THREE.OrbitControls(camera);
     controls.autoRotate = false;
 
@@ -126,7 +126,7 @@ const initCanvasAudio = name => {
   //render the sucker
   function render(freqData) {
     // this is what makes the shader pop. This line of code feeds the audio in
-    uniforms.amplitude.value = numscale(freqData[0], 0, 300, -2, 2);
+    uniforms.amplitude.value = numscale(freqData[3], 0, 300, 0,3);
     // we have to update the orbit controls anytime we render
     controls.update();
     renderer.render(scene, camera);
