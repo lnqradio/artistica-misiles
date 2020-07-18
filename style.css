@@ -81,9 +81,36 @@ opacity: .8;
 #container canvas {
 	opacity: .2;
 }
+.svg-icon {
+  width: 1em;
+  height: 1em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #fff;
+}
+
+.svg-icon circle {
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+.misiles .headphones {
+	display: flex;
+	margin: 1rem 0;
+}
+.misiles .headphones .icon{
+	margin-right: 5px;
+}
+
+.headphones small {
+	font-size: .75rem;
+}
 
 .misiles h2 {
-font-size: 1rem;
+	font-size: 1rem;
 	margin: .5rem  0;
 }
 
