@@ -1,0 +1,66 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+  background: -moz-linear-gradient(top, rgba(40, 17, 54,1) 0%, rgba(35,17,46,1) 52%, rgba(36,18,47,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(40, 17, 54,1) 0%,rgba(35,17,46,1) 52%,rgba(36,18,47,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(40, 17, 54,1) 0%,rgba(35,17,46,1) 52%,rgba(36,18,47,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c90e9d', endColorstr='#162087',GradientType=0 ); /* IE6-9 */
+  background: rgba(40, 17, 54,1) /* Old browsers */
+}
+
+button {
+  background: black;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 20px 8px;
+  position: fixed;
+  bottom: 30vh;
+  left: calc(50vw - 50px);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+.misiles {
+position: fixed;
+display: flex;
+align-items: center;
+flex-direction: column;
+left: 0;
+color: #ddd;
+right: 0;
+width: 250px;
+text-align: center;
+top: 0;
+font-size: 3rem;
+font-family: monospace;
+opacity: .2;
+}
+
+.misiles img {
+	width: 250px;
+	height: auto;
+}
+
+audio {
+position: fixed;
+    z-index: 3000;
+    bottom: 0;
+    left: 10px;
+    opacity: 1;
+    right: 0;
+    width: 100%;
+    filter: invert(1);
+    background: #fff;
+    left: 0;
+}
+
+body {
+	cursor: move
+}
+
+canva {
+	opacity: .5
+}
