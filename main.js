@@ -35,15 +35,15 @@ const initCanvasAudio = name => {
   function init() {
     // create the camera and hook up orbit controls
     camera = new THREE.PerspectiveCamera(50, width / height, 1, 10000);
-    camera.position.set(0, 0, 50);
+    camera.position.set(0, 0, 120);
     controls = new THREE.OrbitControls(camera);
-    controls.autoRotate = true;
+    controls.autoRotate = false;
 
     // create the scene
     scene = new THREE.Scene();
 
     // create the geometry
-    let geometry = new THREE.TorusKnotGeometry(200, 0.8, 67, 18, 15, 12);
+     let geometry = new THREE.TorusGeometry(5, 3, 67, 18, 15, 12);
     geometry.center();
     let tessellateModifier = new THREE.TessellateModifier(8);
     for (let i = 0; i < 6; i++) {
@@ -58,20 +58,20 @@ const initCanvasAudio = name => {
     let color = new THREE.Color();
     for (let f = 0; f < numFaces; f++) {
       let index = 9 * f;
-      let h = 0.1 * Math.random();
+      let h = 0.2 * Math.random();
       let s = 0.5 + 0.5 * Math.random();
       let l = 0.5 + 0.5 * Math.random();
       color.setHSL(h, s, l);
-      let d = 15 * (0.5 - Math.random());
+      let d = 10 * (0.5 - Math.random());
       for (let i = 0; i < 3; i++) {
-        colors[index + 1 * i] = color.r;
-        colors[index + 1 * i + 1] = color.g;
-        colors[index + 1 * i + 2] = color.b;
+        colors[index + 5 * i] = color.r;
+        colors[index + 8 * i + 1] = color.g;
+        colors[index + 2 * i + 2] = color.b;
         displacement[index + 3 * i] = d;
         displacement[index + 3 * i + 1] = d;
         displacement[index + 3 * i + 2] = d;
       }
-    }
+  }
 
     // add them to the geometry
     geometry.addAttribute("customColor", new THREE.BufferAttribute(colors, 3));
@@ -124,7 +124,7 @@ const initCanvasAudio = name => {
   //render the sucker
   function render(freqData) {
     // this is what makes the shader pop. This line of code feeds the audio in
-    uniforms.amplitude.value = numscale(freqData[0], 0, 300, -2, 2);
+    uniforms.amplitude.value = numscale(freqData[0], -50, 100, -2, 2);
     // we have to update the orbit controls anytime we render
     controls.update();
     renderer.render(scene, camera);
